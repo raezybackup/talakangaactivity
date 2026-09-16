@@ -29,7 +29,7 @@ const admissionSubmitInput = z.object({
   civilStatus: z.string().trim().min(1).max(32),
   birthDate: z.string().date(),
   email: z.string().trim().email().max(320),
-  mobile: z.string().trim().min(7).max(32),
+  mobile: z.string().trim().regex(/^\d{11}$/, "Mobile number must contain exactly 11 digits"),
   region: z.string().trim().min(1).max(120),
   province: z.string().trim().min(1).max(120),
   city: z.string().trim().min(1).max(120),
